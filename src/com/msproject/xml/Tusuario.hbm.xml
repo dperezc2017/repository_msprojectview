@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/10/2017 09:48:22 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.msproject.model.Tusuario" table="tusuario" catalog="bd_msprojectview">
+        <id name="codUsuario" type="java.lang.Integer">
+            <column name="codUsuario" />
+            <generator class="identity" />
+        </id>
+        <property name="nombreUsuario" type="string">
+            <column name="nombreUsuario" length="45" not-null="true" unique="true" />
+        </property>
+        <property name="clave" type="string">
+            <column name="clave" length="45" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" not-null="true" />
+        </property>
+        <property name="apellidoPaterno" type="string">
+            <column name="apellidoPaterno" length="45" not-null="true" />
+        </property>
+        <property name="apellidoMaterno" type="string">
+            <column name="apellidoMaterno" length="45" not-null="true" />
+        </property>
+        <property name="celular" type="int">
+            <column name="celular" not-null="true" />
+        </property>
+        <property name="correo" type="string">
+            <column name="correo" length="45" not-null="true" />
+        </property>
+        <property name="rol" type="string">
+            <column name="rol" length="45" not-null="true" />
+        </property>
+        <set name="ttareas" table="ttarea" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codUsuario" not-null="true" />
+            </key>
+            <one-to-many class="com.msproject.model.Ttarea" />
+        </set>
+    </class>
+</hibernate-mapping>

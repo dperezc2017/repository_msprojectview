@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css" type='text/css' />
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css"
+		type='text/css' />
+	
+	<h:outputScript library="primefaces" name="jquery/jquery.js" />
+	<h:outputScript library="primefaces" name="jquery/jquery-plugins.js" />
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Login</title>
+</h:head>
+<h:body>
+	<h:form>
+		<p:panelGrid columns="2">
+			<p:outputLabel value="Nombre: " />
+			<p:inputText value="#{usuarioBean.tusuario.nombre}" />
+			
+			<p:outputLabel value="Apellido Paterno: " />
+			<p:inputText value="#{usuarioBean.tusuario.apellidoPaterno}" />
+			
+			<p:outputLabel value="Apellido Materno: " />
+			<p:inputText value="#{usuarioBean.tusuario.apellidoMaterno}" />
+			
+			<p:outputLabel value="Usuario: " />
+			<p:inputText value="#{usuarioBean.tusuario.nombreUsuario}" />
+			
+			<p:outputLabel value="Clave: " />
+			<p:inputText value="#{usuarioBean.tusuario.clave}" />
+			
+			<p:outputLabel value="Correo: " />
+			<p:inputText value="#{usuarioBean.tusuario.correo}" />
+			
+			<p:outputLabel value="Celular: " />
+			<p:inputText value="#{usuarioBean.tusuario.celular}" />
+			
+			<p:outputLabel value="Rol: " />
+			<p:inputText value="#{usuarioBean.tusuario.rol}"	 />
+			
+			<h:commandButton action="#{usuarioBean.modificar()}" value="Modificar" />
+			
+			<h:commandButton action="registrarUsuario" immediate="true" value="Cancelar" />
+			
+		</p:panelGrid>
+	</h:form>
+</h:body>
+</html>

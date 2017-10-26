@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css" type='text/css' />
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css" type='text/css' />
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Login</title>
+</h:head>
+<h:body>
+	<p:spacer height="100" />
+	<p:growl id="messages" showDetail="true" />
+	<div class="row-fluid">
+		<div class="col-xs-3 col-sm-3 col-md-4 col-lg-4">
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h:form>
+						<fieldset>
+							<legend>Iniciar Sesi&oacute;n</legend>
+
+							<div class="form-group">
+								<span class="glyphicon glyphicon-user">&nbsp;</span>
+								<p:outputLabel for="txtUsuario" value="Usuario" />
+								<p:inputText id="txtUsuario" placeholder="Ejm: dperezc"
+									value="#{usuarioBean.tusuario.nombreUsuario}" required="true"
+									styleClass="form-control" style="text-transform: uppercase;"/>
+							</div>
+							<div class="form-group">
+								<span class="glyphicon glyphicon-briefcase">&nbsp;</span>
+								<p:outputLabel for="txtClave" value="Clave: " />
+								<p:password id="txtClave" placeholder="******"
+									value="#{usuarioBean.tusuario.clave}" required="true"
+									styleClass="form-control"/>
+							</div>
+							<h:commandButton styleClass="form-control btn btn-danger"
+								value="Iniciar Sesion" action="#{usuarioBean.verificarDatos()}"></h:commandButton>
+
+						</fieldset>
+
+
+
+					</h:form>
+				</div>
+				<fieldset style="background-color: #e9e9e9">
+				
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align: center;">
+						<p:link value="Registrar Usuario" href="registrarUsuario.xhtml"></p:link>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align: center;">
+						<p:link value="¿Olvido su Clave?" href="olvidarClave.xhtml"></p:link>
+					</div>
+					
+				</fieldset>
+			</div>
+
+		</div>
+
+		<div class="col-xs-3 col-sm-3 col-md-4 col-lg-4"></div>
+
+	</div>
+</h:body>
+</html>

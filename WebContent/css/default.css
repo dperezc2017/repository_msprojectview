@@ -1,0 +1,23 @@
+body {
+    font-size: 75% !important;
+
+}
+
+.ui-widget,.ui-widget-header,.ui-widget-content,.ui-widget-header .ui-widget-header,.ui-widget-content .ui-widget-content,.ui-widget input,.ui-widget select,.ui-widget textarea,.ui-widget button
+    {
+    font-size: 100% !important;
+}
+
+.estilo{
+	font-weight: bold;
+}
+
+.colorDelayed{
+   background-color:#F78181;
+   background-image:none;
+}
+
+.colorNormal{
+   background-color:#FFFFFF;
+   background-image:none;
+}

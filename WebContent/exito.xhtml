@@ -1,0 +1,152 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" href="css/styles01.css" type='text/css' />
+	<link rel="stylesheet" href="css/bootstrap.min.css" type='text/css' />
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css"
+		type='text/css' />
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</h:head>
+
+<h:body style="overflow-x: hidden;">
+	<!-- CABECERA -->
+	<header>
+	<div class="MAQ_CONTE_alineacion">
+		<!--CABECERA-->
+		<div class="WEB_CONTE_cabecera">
+			<!--CABECERA LOGO-->
+			<div class="WEB_logo">
+				<a href="/" id="WEB_logo"
+					title="BANCO DE COMERCIO,  Por tu progreso y el de tu familia">
+					Banco de Comercio, Por tu progreso y el de tu familia</a>
+			</div>
+			<!--CABECERA LOGO-->
+		</div>
+	</div>
+
+	</header>
+	<!-- CUERPO -->
+	<div class="container">
+
+
+		<div class="MAQ_CONTE_principal">
+
+			<div class="WEB_CONTE_bloque">
+				<h:form rendered="#{usuarioBean.verificarSesion()}">
+					<div class="form-group">
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"
+							style="text-align:right; display: inline-block;">
+							<h2
+								style="color: #c4161c; padding: 8px 0px 4px; margin: 0px 0px 20px; font: bold 22px/24px Arial, Helvetica, sans-serif; display: block;">
+								Bienvenido Usuario:</h2>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"
+							style="text-align:left; display: inline-block;">
+							<h2
+								style="color: ##E3E3E3; padding: 8px 0px 4px; margin: 0px 0px 20px; font: bold 22px/24px Arial, Helvetica, sans-serif; display: block;">
+								<p:outputLabel value="#{usuarioBean.tusuario.nombreUsuario}"
+									style="text-transform: uppercase;" />
+							</h2>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"
+							style="text-align: center; display: inline-block;">
+							<h2
+								style="color: #c4161c; padding: 8px 0px 4px; margin: 0px 0px 20px; font: bold 22px/24px Arial, Helvetica, sans-serif; display: block;">
+								<p:outputLabel value="MEDIO" style="text-transform: uppercase;" />
+							</h2>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"
+							style="text-align: right; display: inline-block;">
+							<p:commandButton value="Cerrar Sesion"
+								action="#{usuarioBean.cerrarSesion()}"
+								styleClass="btn btn-danger" />
+						</div>
+					</div>
+				</h:form>
+				<p:spacer height="10" />
+
+				<h1
+					style="text-align: center;color: #383838; font: bold 25px/28px Arial, Helvetica, sans-serif;">
+					Libro de Reclamaciones Control
+					de Avances (%):</h1>
+
+			</div>
+
+		</div>
+	</div>
+
+	<!-- FOOTER -->
+	<div class="footer">
+		<div class="MAQ_CONTE_pie">
+			<!--FOOTER INTERNA-->
+			<div class="WEB_CONTE_pie">
+				<!--FOOTER ZONA Y CREDITOS-->
+				<div class="WEB_CONTE_pieInferior">
+					<div class="WEB_pieInferior">
+						<div class="WEB_pieZona">
+							<div class="ZOP_zonaPie">
+								<!--ZONA PAGINA HTML-->
+								BANCO DE COMERCIO 2017 - Todos los derechos reservados
+								<!--ZONA PAGINA HTML-->
+							</div>
+						</div>
+						<div class="WEB_pieCreditos"></div>
+					</div>
+				</div>
+				<!--FOOTER ZONA Y CREDITOS-->
+			</div>
+			<!--FOOTER INTERNA-->
+		</div>
+	</div>
+</h:body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

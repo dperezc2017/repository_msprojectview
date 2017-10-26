@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/10/2017 09:48:22 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.msproject.model.Ttarea" table="ttarea" catalog="bd_msprojectview">
+        <id name="codTarea" type="java.lang.Integer">
+            <column name="codTarea" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tusuario" class="com.msproject.model.Tusuario" fetch="select">
+            <column name="codUsuario" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tproyecto" class="com.msproject.model.Tproyecto" fetch="select">
+            <column name="codProyecto" not-null="true" />
+        </many-to-one>
+        <property name="nombreTarea" type="string">
+            <column name="nombreTarea" length="45" />
+        </property>
+        <property name="fechaInicio" type="date">
+            <column name="fechaInicio" length="10" />
+        </property>
+        <property name="fechaFin" type="date">
+            <column name="fechaFin" length="10" />
+        </property>
+        <property name="completado" type="string">
+            <column name="completado" length="45" />
+        </property>
+        <property name="retraso" type="java.lang.Integer">
+            <column name="retraso" />
+        </property>
+        <property name="predecesor" type="java.lang.Integer">
+            <column name="predecesor" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,171 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" href="css/styles01.css" type='text/css' />
+	<link rel="stylesheet" href="css/bootstrap.min.css" type='text/css' />
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css"
+		type='text/css' />
+	
+	<h:outputScript library="primefaces" name="jquery/jquery.js" target="head" />
+	<h:outputScript library="primefaces" name="jquery/jquery-plugins.js" target="head" />
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</h:head>
+
+<h:body style="overflow-x: hidden;">
+	<!-- CABECERA -->
+	<header>
+	<div class="MAQ_CONTE_alineacion">
+		<!--CABECERA-->
+		<div class="WEB_CONTE_cabecera">
+			<!--CABECERA LOGO-->
+			<div class="WEB_logo">
+				<a href="/" id="WEB_logo"
+					title="BANCO DE COMERCIO,  Por tu progreso y el de tu familia">
+					Banco de Comercio, Por tu progreso y el de tu familia</a>
+			</div>
+			<!--CABECERA LOGO-->
+		</div>
+	</div>
+
+	</header>
+	<!-- CUERPO -->
+	<div class="container">
+		<div class="MAQ_CONTE_principal">
+			<div class="WEB_CONTE_bloque">
+				<h:form rendered="#{usuarioBean.verificarSesion()}">
+					<div class="form-group">
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"
+							style="text-align: right; display: inline-block;">
+							<h4
+								style="color: #c4161c; padding: 8px 0px 4px; margin: 0px 0px 20px;display: block;">
+								Bienvenido Usuario:</h4>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"
+							style="text-align: left; display: inline-block;">
+							<h4
+								style="color: ##E3E3E3; padding: 8px 0px 4px; margin: 0px 0px 20px;display: block;">
+								<p:outputLabel value="#{usuarioBean.tusuario.nombreUsuario}"
+									style="text-transform: uppercase;" />
+							</h4>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"
+							style="text-align: center; display: inline-block;">
+							<h4
+								style="color: #c4161c; padding: 8px 0px 4px; margin: 0px 0px 20px; display: block;">
+								<p:outputLabel value="ADMINISTRADOR"
+									style="text-transform: uppercase;" />
+							</h4>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"
+							style="text-align: right; display: inline-block;">
+							<h:commandButton value="Cerrar Sesion"
+								action="#{usuarioBean.cerrarSesion()}"
+								styleClass="btn btn-danger" />
+						</div>
+					</div>
+				</h:form>
+				<p:spacer height="10" />
+			</div>
+				<h:form enctype="multipart/form-data">
+					<fieldset>
+						<legend>Subir Archivo MSProyect</legend>
+						<p:growl id="messages" showDetail="true" />
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<h:panelGrid columns="2">
+								<p:fileUpload value="#{mbUpload.file}" mode="simple" skinSimple="true" />				
+								<p:commandButton icon="ui-icon-circle-arrow-n" value="Upload" ajax="false" action="#{mbUpload.upload}" >
+								
+								</p:commandButton>
+								
+							</h:panelGrid>
+						</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<h:panelGrid columns="2">
+								<h:outputText value="Ingrese fecha para calcular estatus del proyecto: &nbsp;" />
+								
+								<p:calendar value="#{mbUpload.date}" pattern="dd-MM-yyyy" />
+								</h:panelGrid>
+							</div>
+						</div>
+					</fieldset>
+				</h:form>
+		</div>
+	</div>
+
+	<!-- FOOTER -->
+	<div class="footer">
+		<div class="MAQ_CONTE_pie">
+			<!--FOOTER INTERNA-->
+			<div class="WEB_CONTE_pie">
+				<!--FOOTER ZONA Y CREDITOS-->
+				<div class="WEB_CONTE_pieInferior">
+					<div class="WEB_pieInferior">
+						<div class="WEB_pieZona">
+							<div class="ZOP_zonaPie">
+								<!--ZONA PAGINA HTML-->
+								BANCO DE COMERCIO 2017 - Todos los derechos reservados
+								<!--ZONA PAGINA HTML-->
+							</div>
+						</div>
+						<div class="WEB_pieCreditos"></div>
+					</div>
+				</div>
+				<!--FOOTER ZONA Y CREDITOS-->
+			</div>
+			<!--FOOTER INTERNA-->
+		</div>
+	</div>
+</h:body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

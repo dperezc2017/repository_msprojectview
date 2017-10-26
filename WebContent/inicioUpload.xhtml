@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" href="css/default.css" type='text/css'/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Subir Archivo</title>
+</h:head>
+<h:body>
+	<h:form enctype="multipart/form-data">
+		<p:growl id="messages" showDetail="true" />
+		<p:spacer height="100"/>
+		<center>
+			<h:panelGrid columns="2">
+				<p:fileUpload value="#{mbUpload.file}" mode="simple"/>
+	    		<p:commandButton value="Submit" ajax="false"
+	    			action="#{mbUpload.upload}"/>
+    		</h:panelGrid>
+    		<p:panel>
+    			<h:outputText value="Ingrese fecha para calcular estatus del proyecto: "/>
+    			<p:spacer width="15"/>
+    			<p:calendar value="#{mbUpload.date}" pattern="dd-MM-yyyy"/>
+    		</p:panel>
+   		</center>
+	</h:form>
+</h:body>
+</html>

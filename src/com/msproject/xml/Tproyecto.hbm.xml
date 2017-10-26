@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/10/2017 09:48:22 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.msproject.model.Tproyecto" table="tproyecto" catalog="bd_msprojectview">
+        <id name="codProyecto" type="java.lang.Integer">
+            <column name="codProyecto" />
+            <generator class="identity" />
+        </id>
+        <property name="nombreProyecto" type="string">
+            <column name="nombreProyecto" length="45" />
+        </property>
+        <property name="descripcionProyecto" type="string">
+            <column name="descripcionProyecto" length="45" />
+        </property>
+        <property name="encargado" type="string">
+            <column name="encargado" length="45" />
+        </property>
+        <set name="ttareas" table="ttarea" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codProyecto" not-null="true" />
+            </key>
+            <one-to-many class="com.msproject.model.Ttarea" />
+        </set>
+    </class>
+</hibernate-mapping>

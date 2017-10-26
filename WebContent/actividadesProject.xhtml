@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link rel="stylesheet" href="css/default.css" type='text/css'/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Actividades del Project</title>
+</h:head>
+<f:event type="preRenderView" listener="#{mbDemoProject.preRenderView}" />
+<h:body>
+	<h:form id="form">
+		<p:growl id="growl" showDetail="true" autoUpdate="true"/>
+		<p:panel header="Diagrama de GANTT - Informe generado al: #{mbDemoProject.dateText}">
+			<h:panelGrid columns="1">
+				<p:dataTable id="dtTransferenciaDoc" var="rows"
+					emptyMessage="NO SE ENCONTRARON DATOS"
+					rowStyleClass="#{rows.colorStatus eq 'colorNormal' ? 'colorNormal' : rows.colorStatus eq 'colorDelayed' ? 'colorDelayed': null}"
+					rows="20" paginatorPosition="bottom"
+					value="#{mbDemoProject.lstTaskViews}" paginator="true"
+					rowIndexVar="row" rowsPerPageTemplate="20,30,40,50"
+					currentPageReportTemplate="Mostrando {startRecord}-{endRecord} de {totalRecords} tareas"
+					paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					>
+					<p:column headerText="ID" style="width:4%;">
+						<h:outputText value="#{rows.id}"  />
+					</p:column>
+					<p:column headerText="Nombre de la Tarea" style="width:40%;">
+						<p:spacer width="#{rows.level*10}" height="2"/>
+						<h:outputText value="#{rows.name}" style="font-weight:#{rows.bold?'bold':'normal'}"/>
+					</p:column>
+					<p:column headerText="Fecha Inicio" style="width:10%;text-align:center">
+						<h:outputFormat value="{0, date, dd/MM/yyyy}">
+							<f:param value="#{rows.start}" />
+						</h:outputFormat>
+					</p:column>
+					<p:column headerText="Fecha Fin" style="width:10%;text-align:center">
+						<h:outputFormat value="{0, date, dd/MM/yyyy}">
+							<f:param value="#{rows.finish}" />
+						</h:outputFormat>
+					</p:column>
+					<p:column headerText="%Completado" style="width:10%;text-align:right">
+						<h:outputText value="#{rows.percentageWorkComplete}" />
+					</p:column>
+					<p:column headerText="Retraso" style="width:10%;text-align:right">
+						<h:outputText value="#{rows.delay}" />
+					</p:column>
+					<p:column headerText="Recursos" style="width:10%;text-align:left">
+						<h:outputText value="#{rows.resourceText}" />
+					</p:column>
+					<p:column headerText="Predecesor" style="width:10%;text-align:left">
+						<h:outputText value="#{rows.predecessorsText}" />
+					</p:column>
+				</p:dataTable>
+			</h:panelGrid>
+			<h:panelGrid>
+			<p:commandButton value="Nuevo Archivo" icon="ui-icon-search"
+				action="inicioUpload.xhtml?faces-redirect=true" />
+		</h:panelGrid>
+		</p:panel>
+		</h:form>
+</h:body>
+</html>
