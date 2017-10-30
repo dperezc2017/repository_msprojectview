@@ -76,13 +76,14 @@
 				<p:spacer height="10" />
 			</div>
 				<h:form enctype="multipart/form-data">
+				<center>
 					<fieldset>
 						<legend>Subir Archivo MSProyect</legend>
 						<p:growl id="messages" showDetail="true" />
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<h:panelGrid columns="2">
-								<p:fileUpload value="#{mbUpload.file}" mode="simple" skinSimple="true" />				
+								<p:fileUpload icon="ui-icon-folder-open" value="#{mbUpload.file}" mode="simple" skinSimple="true" />				
 								<p:commandButton icon="ui-icon-circle-arrow-n" value="Upload" ajax="false" action="#{mbUpload.upload}" >
 								
 								</p:commandButton>
@@ -100,6 +101,7 @@
 							</div>
 						</div>
 					</fieldset>
+					</center>
 				</h:form>
 		</div>
 	</div>
